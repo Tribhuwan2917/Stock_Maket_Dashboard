@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from 'flowbite-react';
 
 // const LoginComponent = () => {
-  function LoginComponent(){
+function LoginComponent() {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -44,11 +44,18 @@ import { Button } from 'flowbite-react';
     const storedUser = JSON.parse(localStorage.getItem('user'));
 
     if (storedUser && storedUser.username === username && storedUser.password === password) {
-      console.log("is has been called")
+      // console.log("is has been called")
       // setTimeout(()=>{},1000)
+      sessionStorage.setItem('isLoggedIn', true)
+  
       navigate('/stockDeshboard')
+
       
-      // location.reload()
+      // console.log("This is data", sessionStorage.getItem('isLoggedIn'))
+
+
+
+      // 
       // <Link src="/stockDeshboard"></Link>
       // <a src="/stockDeshboard">click here</a>
 
@@ -132,6 +139,6 @@ import { Button } from 'flowbite-react';
       )}
     </div>
   );
-  
-      }
+
+}
 export default LoginComponent;
