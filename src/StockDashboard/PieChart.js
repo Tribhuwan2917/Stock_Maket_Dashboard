@@ -28,11 +28,11 @@ export default function PieChart() {
     ],
   };
   return (
-    <div style={{ width: 650, textAlign: "center" }}>
+    <div style={{ width: 350, textAlign: "center" }}>
       <h1 style={{ fontFamily: "monospace" }}>
         Most Popular Programming languages to learn in 2022
       </h1>
-      <Pie data={data} width={50} height={50} />
+      <Pie data={data} width={20} height={20} />
     </div>
   );
 }
